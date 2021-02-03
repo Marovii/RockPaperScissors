@@ -3,75 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Rock | Paper | Scissors</title>
 </head>
 <body>
-    <script>
-        function thisGame(){
-            let i = 0;
-            let j = 0;
-            while (i < 5 && j < 5){
-                playRound();
-                function playRound(){
-                    function computerPlay(){
-                        let possibleSelection = ["rock", "paper", "scissors"];
-                        thisSelection = possibleSelection[Math.floor(Math.random() * possibleSelection.length)];
-                        console.log(thisSelection);
-                        return thisSelection;
-                    }
-                    const computerSelection = computerPlay();
-                    const playerSelection = prompt ('What sign do you chose');
-                    if(playerSelection=="rock" && computerSelection== "paper"){
-                        alert("You Lose! Paper beats Rock");
-                        i++;
-                    }
-                    else if(playerSelection=="paper" && computerSelection=="scissors"){
-                        alert("You Lose! Paper beats Rock");
-                        i++;
-                    }
-                    else if(playerSelection=="scissors" && computerSelection=="rock"){
-                        alert("You Lose! Rock beats Scissors");
-                        i++;
-                    }
-                    else if(playerSelection=="scissors" && computerSelection=="scissors"){
-                        alert("It's a tie!");
-                    }
-                    else if(playerSelection=="rock" && computerSelection=="rock"){
-                        alert("It's a tie!");
-                    }
-                    else if(playerSelection=="paper" && computerSelection=="paper"){
-                        alert("It's a tie!");
-                    }
-                    else if(playerSelection=="scissors" && computerSelection=="paper"){
-                        alert("You win! Scissors beats Paper");
-                        j++;
-                    }
-                    else if(playerSelection=="rock" && computerSelection=="scissors"){
-                        alert("You win! Rock beats Scissors");
-                        j++;
-                    }
-                    else if(playerSelection=="paper" && computerSelection=="rock"){
-                        alert("You win! Paper beats Rock");
-                        j++;
-                    }
-                    else{
-                        alert("You haven't chosen ;)");
-                    }
-                console.log(i);
-                console.log(j);
-                
-            }
-        }
-            console.log(i);
-            console.log(j);
-            if (i == 5){
-            alert('Aww shiet man too bad :(');
-            } else if (j == 5){
-            alert('You\'ve beaten the computer!');
-            }else {
-            alert("I'm a Tea Pot.");
-            }
-        }
-    </script>
+    <h1>Welcome to the game</h1>
+    <div class="signs">
+        <button class="rock btn"></button>
+        <button class="paper btn"></button>
+        <button class="scissors btn"></button>
+    </div>
+    <div class="scoreboard"></div>
+    <ul>
+        <li class="message">We wish you best of luck</li>
+        <li class="score">
+            <ul class="scorelist">
+                <li class="playerScore">0</li>
+                <li>:</li>
+                <li class="computerScore">0</li>
+            </ul>
+        </li>
+    </ul>
+    <div class="startdiv">
+        <button class='start'>START / RESET</button>
+    </div>
 </body>
+<script src='script/main.js'></script>
 </html>
